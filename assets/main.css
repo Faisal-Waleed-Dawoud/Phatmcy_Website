@@ -29,6 +29,13 @@ a {
     text-decoration: none;
 }
 
+.rounded {
+    border-end-end-radius: 30px;
+    border-start-end-radius: 30px;
+    border-start-start-radius: 30px;
+    border-end-start-radius: 30px;
+}
+
 .container {
     padding: 0 15px;
     margin: 0 auto;
@@ -57,10 +64,11 @@ a {
 
 /* Nav Bar Start */
 
-.nav-bar {
+header {
     background-color: white;
     z-index: 10000;
     position: sticky;
+    top: 0;
     box-shadow: 0 0 20px #ccc;
 }
 
@@ -145,3 +153,233 @@ a {
 }
 
 /* Nav Bar End */
+
+/* Landing Strat */
+.landing {
+    position: relative;
+    background-image: radial-gradient(circle at top right, rgba(255, 255, 255, 0) 20%, rgba(1, 77, 183, 0.9) 100%), url(../Images/pharmacy-05.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+
+.landing::after {
+    content: '';
+    position: absolute;
+    bottom: -60%;
+    left: -35%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform: skew(-103deg);
+}
+
+.landing::before {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform: skew(92deg)
+}
+
+.landing p:first-child {
+    text-transform: uppercase;
+    padding-top: 120px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+}
+
+.landing h2 {
+    color: white;
+    margin-bottom: 20px;
+    max-width: 500px;
+    font-size: 50px;
+    line-height: 1.3;
+}
+
+.landing  p:nth-child(3) {
+    color: rgba(255 255 255 / 0.7);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.landing p:nth-child(4) {
+    background-color: var(--red);
+    width: fit-content;
+    padding: 15px;
+    margin-bottom: 60px;
+    box-shadow: 2px 4px 12px #555;
+    transition: var(--transition-time);
+}
+
+.landing p:nth-child(4):hover {
+    background-color: #ff6b86;
+}
+
+.landing p:nth-child(4) a {
+    color: white;
+    font-weight: bold;
+}
+
+
+.landing .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding-bottom: 60px;
+}
+
+@media (max-width: 980px) {
+    .landing .content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.landing .content .box {
+    display: flex;
+    color: white
+}
+
+.landing .content .box img {
+    align-self: flex-start;
+    width: 75px;
+    margin-right: 15px;
+}
+
+.landing .content .box h3 {
+    font-size: 20px;
+}
+
+.landing .content .box p:first-of-type {
+    line-height: 1.3;
+    margin: 15px 0;
+}
+
+.landing .content .box p a {
+    color: white;
+    margin-top: 15px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #24d9e2;
+}
+/* Landing End */
+
+/* Login Start */
+.login-form {
+    padding: 60px 0;
+}
+
+.login-form .container .content-holder {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 991px) {
+    .login-form .container .content-holder {
+        flex-direction: column;
+    }
+    .login-form .container .content-holder .content {
+        align-self: flex-start;
+    }
+    .login-form .container .content-holder .content form {
+        margin-left: 20px;
+    }
+    .login-form .container .content-holder .content h3 {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .login-form .container .content-holder .content {
+        align-self: center;
+        width: 100%;
+    }
+
+    .login-form .container .content-holder .content form {
+        margin-left: 0;
+    }
+    .login-form .container .content-holder .content h3 {
+        max-width: 100%;
+        font-size: 26px;
+    }
+}
+
+.login-form .container .content-holder img {
+    max-width: 100%;
+    width: 550px;
+}
+
+.login-form .container .content-holder .content {
+    flex: 1;
+}
+
+.login-form .container .content-holder .content p {
+    color: var(--yellow);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.login-form .container .content h3 {
+    font-size: 42px;
+    margin: 15px 0;
+    line-height: 1.3;
+    max-width: 350px; 
+}
+
+
+.login-form .container .content-holder .content form input {
+    border: none;
+    display: block;
+    min-width: 100%;
+    background: #eee;
+    border-end-end-radius: 30px;
+    border-start-end-radius: 30px;
+    border-start-start-radius: 30px;
+    border-end-start-radius: 30px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: var(--transition-time);
+}
+
+.login-form .container .content-holder .content form input:focus {
+    outline: none;
+    background-color: #ddd;
+}
+
+.login-form .container .content-holder .content form input[type="submit"] {
+    background-color: var(--blue);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-time);
+}
+
+.login-form .container .content-holder .content form input[type="submit"]:hover {
+    background-color: rgba(1, 77, 183, 0.8);
+}
+
+.login-form .container .content-holder .content form input[type = "password"] {
+
+}
+
+.login-form .container .content-holder .content form input[type = "text"] {
+
+}
+
+.login-form .container .content-holder .content form a {
+    font-size: 14px;
+    text-decoration: underline;
+    color: #666;
+}
+/* Login End */
