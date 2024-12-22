@@ -36,6 +36,10 @@ a {
     border-end-start-radius: 30px;
 }
 
+.section {
+    padding: 60px 0;
+}
+
 .container {
     padding: 0 15px;
     margin: 0 auto;
@@ -274,9 +278,6 @@ header {
 /* Landing End */
 
 /* Login Start */
-.login-form {
-    padding: 60px 0;
-}
 
 .login-form .container .content-holder {
     display: flex;
@@ -369,17 +370,49 @@ header {
     background-color: rgba(1, 77, 183, 0.8);
 }
 
-.login-form .container .content-holder .content form input[type = "password"] {
-
-}
-
-.login-form .container .content-holder .content form input[type = "text"] {
-
-}
-
 .login-form .container .content-holder .content form a {
     font-size: 14px;
     text-decoration: underline;
     color: #666;
 }
 /* Login End */
+
+/* Cards Start */
+
+.cards .container .card-holder {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    gap: 20px;
+}
+
+.cards .container .card-holder .card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.cards .container .card-holder .card h3 {
+    margin: 15px 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.cards .container .card-holder .card p {
+    line-height: 1.8;
+    color: #666;
+}
+
+.cards .container .card-holder .card a:hover {
+    color: rgba(1, 77, 183, 0.9);
+}
+
+.cards .container .card-holder .card a {
+    display: block;
+    width: fit-content;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: rgba(1, 77, 183, 0.1);
+    color: rgba(1, 77, 183, 0.7);
+    font-weight: 700;
+    transition: var(--transition-time);
+}
+/* Cards End */
