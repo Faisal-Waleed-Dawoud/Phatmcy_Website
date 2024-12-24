@@ -4,6 +4,7 @@ html {
     --red: #FA546D;
     --main-pad: 0 60px;
     --transition-time: 0.3s;
+    --space: 20px;
 }
 
 * {
@@ -84,7 +85,7 @@ header {
 
 .nav-bar h2 {
     min-width: 200px;
-    padding: 30px 0;
+    padding: calc(var(--space) *  1.5) 0;
 }
 
 .nav-bar .nav-bar-links {
@@ -101,7 +102,7 @@ header {
 }
 
 .nav-bar .nav-bar-links ul li {
-    padding: 20px;
+    padding: var(--space);
     transition: var(--transition-time);
 }
 
@@ -117,7 +118,7 @@ header {
 
 .nav-bar .nav-bar-links .cart {
     color: black;
-    margin-left: 10px;
+    margin-left: calc(var(--space) * 0.5);
 }
 
 .nav-bar .nav-bar-links .options {
@@ -144,7 +145,7 @@ header {
         width: 75%;
         transform: translate(-50%, -50%);
         border-top: 2px solid var(--blue);
-        padding: 15px;
+        padding: calc(var(--space) * 0.75);
     }
 
     .nav-bar .nav-bar-links ul li {
@@ -165,7 +166,7 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    padding-bottom: 60px;
+    padding-bottom: calc(var(--space) * 3);
 }
 
 .landing::after {
@@ -193,30 +194,36 @@ header {
 .landing p:first-child {
     text-transform: uppercase;
     padding-top: 120px;
-    margin-bottom: 20px;
+    margin-bottom: var(--space);
     color: rgba(255, 255, 255, 0.7);
     font-size: 20px;
 }
 
 .landing h2 {
     color: white;
-    margin-bottom: 20px;
-    max-width: 500px;
+    margin-bottom: var(--space);
+    max-width: 650px;
     font-size: 50px;
     line-height: 1.3;
 }
 
+@media (max-width: 767px) {
+    .landing h2 {
+        font-size: 28px;
+    }
+}
+
 .landing  p:nth-child(3) {
     color: rgba(255 255 255 / 0.7);
-    margin-bottom: 20px;
+    margin-bottom: var(--space);
     font-size: 20px;
 }
 
 .landing p:nth-child(4) {
     background-color: var(--red);
     width: fit-content;
-    padding: 15px;
-    margin-bottom: 60px;
+    padding: calc(var(--space) * 0.75);
+    margin-bottom: calc(var(--space) * 3);
     box-shadow: 2px 4px 12px #555;
     transition: var(--transition-time);
 }
@@ -234,8 +241,8 @@ header {
 .landing .content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    padding-bottom: 60px;
+    gap: var(--space);
+    padding-bottom: calc(var(--space) * 3);
 }
 
 @media (max-width: 980px) {
@@ -253,7 +260,7 @@ header {
 .landing .content .box img {
     align-self: flex-start;
     width: 75px;
-    margin-right: 15px;
+    margin-right: calc(var(--space) * 0.75);
 }
 
 .landing .content .box h3 {
@@ -262,12 +269,12 @@ header {
 
 .landing .content .box p:first-of-type {
     line-height: 1.3;
-    margin: 15px 0;
+    margin: calc(var(--space) * 0.75) 0;
 }
 
 .landing .content .box p a {
     color: white;
-    margin-top: 15px;
+    margin-top: calc(var(--space) * 0.75);
     font-size: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -279,52 +286,52 @@ header {
 
 /* Login Start */
 
-.login-form .container .content-holder {
+.login-form .container {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: var(--space);
 }
 
 @media (max-width: 991px) {
-    .login-form .container .content-holder {
+    .login-form .container {
         flex-direction: column;
     }
-    .login-form .container .content-holder .content {
+    .login-form .container .content {
         align-self: flex-start;
     }
-    .login-form .container .content-holder .content form {
+    .login-form .container .content form {
         margin-left: 20px;
     }
-    .login-form .container .content-holder .content h3 {
+    .login-form .container .content h3 {
         max-width: 100%;
     }
 }
 
 @media (max-width: 767px) {
-    .login-form .container .content-holder .content {
+    .login-form .container .content {
         align-self: center;
         width: 100%;
     }
 
-    .login-form .container .content-holder .content form {
+    .login-form .container .content form {
         margin-left: 0;
     }
-    .login-form .container .content-holder .content h3 {
+    .login-form .container .content h3 {
         max-width: 100%;
         font-size: 26px;
     }
 }
 
-.login-form .container .content-holder img {
+.login-form .container img {
     max-width: 100%;
     width: 550px;
 }
 
-.login-form .container .content-holder .content {
+.login-form .container .content {
     flex: 1;
 }
 
-.login-form .container .content-holder .content p {
+.login-form .container .content p {
     color: var(--yellow);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -333,13 +340,13 @@ header {
 
 .login-form .container .content h3 {
     font-size: 42px;
-    margin: 15px 0;
+    margin: calc(var(--space) * 0.75) 0;
     line-height: 1.3;
     max-width: 350px; 
 }
 
 
-.login-form .container .content-holder .content form input {
+.login-form .container .content form input {
     border: none;
     display: block;
     min-width: 100%;
@@ -348,17 +355,17 @@ header {
     border-start-end-radius: 30px;
     border-start-start-radius: 30px;
     border-end-start-radius: 30px;
-    padding: 15px;
+    padding: calc(var(--space) * 0.75);
     margin: 10px 0;
     transition: var(--transition-time);
 }
 
-.login-form .container .content-holder .content form input:focus {
+.login-form .container .content form input:focus {
     outline: none;
     background-color: #ddd;
 }
 
-.login-form .container .content-holder .content form input[type="submit"] {
+.login-form .container .content form input[type="submit"] {
     background-color: var(--blue);
     color: white;
     font-weight: 700;
@@ -366,11 +373,11 @@ header {
     transition: var(--transition-time);
 }
 
-.login-form .container .content-holder .content form input[type="submit"]:hover {
+.login-form .container .content form input[type="submit"]:hover {
     background-color: rgba(1, 77, 183, 0.8);
 }
 
-.login-form .container .content-holder .content form a {
+.login-form .container .content form a {
     font-size: 14px;
     text-decoration: underline;
     color: #666;
@@ -379,40 +386,178 @@ header {
 
 /* Cards Start */
 
-.cards .container .card-holder {
+.cards .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
     gap: 20px;
 }
 
-.cards .container .card-holder .card img {
+.cards .container .card img {
     max-width: 100%;
     border-radius: 5px;
 }
 
-.cards .container .card-holder .card h3 {
-    margin: 15px 0;
+.cards .container .card h3 {
+    margin: calc(var(--space) * 0.75) 0;
     font-size: 22px;
     font-weight: 700;
 }
 
-.cards .container .card-holder .card p {
+.cards .container  .card p {
     line-height: 1.8;
     color: #666;
 }
 
-.cards .container .card-holder .card a:hover {
+.cards .container  .card a:hover {
     color: rgba(1, 77, 183, 0.9);
 }
 
-.cards .container .card-holder .card a {
+.cards .container  .card a {
     display: block;
     width: fit-content;
-    margin-top: 15px;
-    padding: 15px;
+    margin-top: calc(var(--space) * 0.75);
+    padding: calc(var(--space) * 0.75);
     background-color: rgba(1, 77, 183, 0.1);
     color: rgba(1, 77, 183, 0.7);
     font-weight: 700;
     transition: var(--transition-time);
 }
 /* Cards End */
+
+/* Features Start */
+
+.features {
+    background-image: url(../Images/pharmacy-16.jpg);
+    background-position: 55%, 50%;
+    background-repeat: no-repeat;
+}
+
+.features .content {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--space) * 2);
+}
+
+@media (max-width: 991px) {
+    .features .content {
+        flex-direction: column;
+    }
+}
+
+.features .content .images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+    flex: 1;
+    width: 100%;
+}
+
+.features .content .images .box {
+    padding: calc(var(--space) * 2);
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.features .content .images .box div {
+    margin-right: auto;
+    width: fit-content;
+    text-align: center;
+}
+
+.features .content .images .box:first-child {
+    background-image: radial-gradient(circle at right, rgba(138, 182, 247, 0.3) 20%, #8ab6f7 100%), url(../Images/pharmacy-12-1.jpg);
+    background-color: #8ab6f7
+}
+
+.features .content .images .box:nth-child(2) {
+    background-image: radial-gradient(circle at right, rgba(138, 182, 247, 0.3), 20%, #f9c0cb 100%), url(../Images/pharmacy-09-1.jpg);
+    background-color: #f9c0cb;
+}
+
+.features .content .images .box:last-child {
+    background-image: radial-gradient(circle at right, rgba(138, 182, 247, 0.3), 20%, #ffe2b5 100%), url(../Images/pharmacy-18.jpg);
+    background-color: #ffe2b5;
+}
+
+.features .content .images .box div i {
+    width: 75px;
+    display: flex;
+    border-radius: 50%;
+    margin-bottom: calc(var(--space) * 0.75);
+    font-size: 25px;
+    color: white;
+    height: 75px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto calc(var(--space) * 0.5);
+}
+
+.features .content .images .box:first-child i {
+    background-color: var(--blue);
+}
+
+.features .content .images .box:first-child p {
+    color: var(--blue)
+}
+
+.features .content .images .box:nth-child(2) i {
+    background-color: var(--red);
+}
+
+.features .content .images .box:nth-child(2) p {
+    color: var(--red);
+}
+
+.features .content .images .box:last-child i {
+    background-color: var(--yellow);
+}
+
+.features .content .images .box:last-child p {
+    color: var(--yellow);
+}
+
+.features .content .images .box div p {
+    font-weight: 700;
+}
+
+.features .content .text {
+    flex: 1;
+}
+
+.features .content .text p:first-of-type {
+    color: var(--yellow);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.features .content .text h3 {
+    margin: calc(var(--space) * 0.75) 0;
+    max-width: max-content;
+    font-size: 42px;
+}
+
+@media (max-width: 767px) {
+    .features .content .text h3 {
+        max-width: none;
+        font-size: 24px;
+    }
+}
+
+.features .content .text p:last-of-type {
+    color: #666;
+    font-weight: 500;
+}
+
+.features .content .text a {
+    background-color: var(--red);
+    display: block;
+    padding: calc(var(--space) * 0.75);
+    margin-top: calc(var(--space) * 1.5);
+    width: fit-content;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0px 3px 15px #bbb;
+}
+/* Features End */
